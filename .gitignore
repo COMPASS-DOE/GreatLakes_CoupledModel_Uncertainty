@@ -198,7 +198,7 @@ libs/
 *.sdf
 *.suo
 # Output
-output/output*
+output/
 # R
 .Rhistory
 R/batchrunner/*.pdf

@@ -1,41 +1,39 @@
-[![DOI](https://zenodo.org/badge/265254045.svg)](https://zenodo.org/doi/10.5281/zenodo.10442485)
+_your zenodo badge here_
 
-# metarepo
-Template repository for a single point of access meta-repository to reproduce an experiment
+# Pringle-etal_2024_JAMES
 
-## Purpose
-A meta-repository creates a single point of access for someone to find all of the components that were used to create a published work for the purpose of reproducibility.  This repository should contain references to all minted data and software as well as house any ancillary code used to transform the source data, create figures for your publication, conduct the experiment, and / or execute the contributing software.
+<p align="center">
+  <a href="https://compass.pnnl.gov/GLM/COMPASSGLM"><img alt="GreatLakesUQ" src="figures/overall_sensitivities_w_interactions.png" width="75%"></a>
+</p>
 
-## Using the template
-Simply click `Use this template` on the main repository page (shows up to the left of `Clone or download`) and fill in your `Repository name`, the `Description`, select whether you want the repository to be `Public` or `Private`, and leave `Include all branches` unchecked.
+**Coupled Lake-Atmosphere-Land Physics Uncertainties in a Great Lakes Regional Climate Model**
 
-## Naming your meta-repository
-The following naming conventions should be used when naming your repository:  
-- Single author:  `lastname_year_journal`
-- Multi author:  `lastname-etal_year_journal`
-- Multiple publications in the same journal:  `lastname-etal_year-letter_journal` (e.g., `human-etal_2020-b_nature`)
+William Pringle<sup>1\*</sup>, [COMPASS-GLM Team 1](https://compass.pnnl.gov/GLM/Team), and Khachik Sargsyan<sup>2</sup>
 
-## Customize your `.gitignore` file
-A general `.gitignore` for use with Python or R development is included.  However, you may wish to customize this to the needs of your project.  The `.gitignore` file lets Git know what to push to the remote repository and what needs to be ignored and stay local.
+<sup>1 </sup> Environmental Science Division, Argonne National Laboratory, Lemont, IL, USA
+<sup>2 </sup> Sandia National Laboratories, Livermore, California, USA
 
-## Suggestions
-- Don't bog down your repository with a bunch of raw data.  Instead archive and mint a DOI for your data and provide the reference in this repository with instructions for use.
-- Create complete and tested documentation for how to use what is in this repository to reproduce your experiment.
+\* corresponding author:  wpringle@anl.gov
 
-## Creating a minted release for your meta-repository
-It is important to version and release your meta-repository as well due to changes that may occur during the publication review process.  If you do not know how to conduct a release on GitHub when linked with Zenodo, please contact chris.vernon@pnnl.gov to get set up.  
+## Abstract
+This study develops a surrogate-based method to assess the uncertainty within a convective permitting integrated modeling system of the Great Lakes region, arising from interacting physics parameterizations across the lake, atmosphere, and land surface. Perturbed physics ensembles of the model during the 2018 summer are used to train a neural network surrogate model to predict lake surface temperature (LST) and near-surface air temperature (T2m). Average physics uncertainties are determined to be 1.5$^\circ$C for LST and T2m over land, and 1.9$^\circ$C for T2m over lake, but these have significant spatiotemporal variations. We find that atmospheric physics parameterizations are the dominant sources of uncertainty for both LST and T2m, and there is a substantial atmosphere-lake physics interaction component. LST and T2m over the lake is more uncertain in the deeper northern lakes particularly during the rapid warming phase that occurs in late spring/early summer. The LST uncertainty increases with sensitivity to the lake model's surface wind stress scheme. T2m over land is more uncertain over forested areas in the north, where it is most sensitive to the land surface model, than the more agricultural land in the south, where it is most sensitive to the atmospheric planetary boundary and surface layer scheme. Uncertainty also increases in the southwest during multiday temperature declines with higher sensitivity to the land surface model. Last, we show that the deduced physics uncertainty of T2m is statistically smaller than a regional warming perturbation exceeding 0.5$^\circ$C.
 
-## The meta-repository markdown template
-A sample meta-repository template is provided in this repository in the file `metarepo_template.md`.  
+## Journal reference
+Pringle, W. J., Huang, C., Xue, P., Wang, J., Sargsyan K., Kayastha, M., Chakraborty, T. C., Yang, Z., Qian Y., Hetland, R. D. (2024). Coupled Lake-Atmosphere-Land Physics Uncertainties in a Great Lakes Regional Climate Model. Submitted to Journal of Advances in Modeling Earth Systems, ESSOAr DOI to add.
 
-To use it, do the following:
-1. Create the template repository as mentioned above in [Using the template](#using-the-template)
-2. Clone your new repository to you local machine
-3. Change directories into your new meta-repository directory you just cloned
-4. Run `git rm README.md` to delete this file (`README.md`) and commit it using `git commit -m 'remove instructions'`
-5. Rename `metarepo_template.md` as `README.md`
-6. Run `git add README.md` to stage the new file that will show up on load in your remote GitHub repository
-7. Run `git rm metarepo_template.md` to remove the original template
-8. Run `git commit -m 'set up new template as readme'` to set the changes
-9. Run `git push` to send the changes to your remote GitHub repository
-10. Modify the `README.md` file to represent your experiement and use the `add`, `commit`, `push` workflow to update your remote repository
+## Code reference
+Pringle W. J. (2024, March 11). COMPASS-DOE/GreatLakes_CoupledModel_Uncertainty (Version v0.1). [Zenodo](http://doi.org/some-doi-number/zenodo.7777777).
+
+## Data reference
+Pringle W. J. (2024, March 11). Great Lakes WRF-FVCOM model ensemble outputs: Summer 2018 daily LST and T2m (Version v0.1) [Dataset]. [Zenodo](http://doi.org/10.5281/zenodo.10806629)
+
+## Contributing modeling software
+| Model | Version | Author-Year | DOI |
+|-------|---------|-----------------|-----|
+ FVCOM | v41 | Chenfu Huang (2023a) | [Zenodo](http://doi.org/10.5281/zenodo.7574673)
+ WRF | v4.2.2  | Chenfu Huang (2023b) | [Zenodo](http://doi.org/10.5281/zenodo.7574675)
+
+
+## [Reproduce my experiment](workflow/README.md#reproduce-my-experiment)
+
+## [Reproduce my analysis and figures](workflow/README.md#reproduce-my-analysis-and-figures)
