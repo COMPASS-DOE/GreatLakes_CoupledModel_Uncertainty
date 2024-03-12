@@ -1,8 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+message: "If you use the workflow, please cite it as below."
 authors:
-  - family-names: "Vernon"
-    given-names: "Chris R."
-    orcid: "https://orcid.org/0000-0002-3406-6214"
-title: "metarepo: A single point of access meta-repository that guides others in how to reproduce an experiment"
-repository-code: "https://github.com/IMMM-SFA/metarepo"
+  - family-names: "Pringle"
+    given-names: "William J."
+    orcid: "https://orcid.org/0000-0002-2877-4812"
+title: "COMPASS-DOE/GreatLakes_CoupledModel_Uncertainty"
+repository-code: "https://github.com/COMPASS-DOE/GreatLakes_CoupledModel_Uncertainty"
