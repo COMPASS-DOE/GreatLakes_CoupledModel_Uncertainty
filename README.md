@@ -12,8 +12,8 @@ William Pringle<sup>1\*</sup>, [COMPASS-GLM Team 1](https://compass.pnnl.gov/GLM
 
 <sup>1 </sup> Environmental Science Division, Argonne National Laboratory, Lemont, IL, USA
 <sup>2 </sup> Department of Civil, Environmental and Geospatial Engineering, Michigan Technological University, Houghton, MI, USA
-<sup>3 </sup> Environmental Science Division, Argonne National Laboratory, Lemont, IL, USA
-<sup>4 </sup> Pacific Northwest National Laboratory, Richland, WA, USA
+<sup>3 </sup> Pacific Northwest National Laboratory, Richland, WA, USA
+<sup>4 </sup> Sandia National Laboratories, Livermore, CA, USA
 
 \* corresponding author:  wpringle@anl.gov
 
