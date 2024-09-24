@@ -124,7 +124,7 @@ def compute_sensitivities(surrogate_model, variable_matrix, sample_size=10000, k
         'variable_names': variable_names,
     }
     for i in range(npts):
-        sens = SensMethod.compute(ysam[:, i] - ysam[:,i].mean())
+        sens = SensMethod.compute(ysam[:, i] - ysam[:, i].mean())
         vdx = -1
         variable_prior = ''
         for sdx, scheme in enumerate(variable_matrix['scheme']):
@@ -142,13 +142,12 @@ def compute_sensitivities(surrogate_model, variable_matrix, sample_size=10000, k
                 if variable_namee != variable_priorr:
                     vdxx += 1
                 variable_priorr = variable_namee
-                if vdx == vdxx: # add internal parameterizations interactions to main effect
-                   sens_dict['main'][i, vdx] += sens['jointt'][sdx, sdxx]
+                if vdx == vdxx:  # add internal parameterizations interactions to main effect
+                    sens_dict['main'][i, vdx] += sens['jointt'][sdx, sdxx]
                 else:
-                   sens_dict['jointt'][i, vdx, vdxx] += sens['jointt'][sdx, sdxx]
+                    sens_dict['jointt'][i, vdx, vdxx] += sens['jointt'][sdx, sdxx]
 
-
-    return sens_dict, ysam
+    return sens_dict, ysam[:, :sample_size]
 
 
 def plot_sens(
