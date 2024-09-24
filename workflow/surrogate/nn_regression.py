@@ -54,6 +54,19 @@ def make_nn_surrogate_model(
 
     print(f'Using {hidden_layers} hidden layer structure')
 
+    # Loss function
+    if loss == 'mse':
+        # loss = torch.nn.MSELoss(reduction='mean')
+        # so we can sum by eigenvalues..
+        loss = torch.nn.MSELoss(reduction='none')
+    elif loss == 'mae':
+        loss = torch.nn.L1Loss(reduction='none')
+    elif loss == 'huber':
+        loss = torch.nn.HuberLoss(reduction='none', delta=1.0)
+    elif type(loss) is str:
+        print(f'Loss function {loss} is unknown. Exiting.')
+        sys.exit()
+
     if cv is not None:
         surrogate_model = []  # [MLP(ndim, neig, layers)] * cv.get_n_splits(train_X)
         for i, (train_indices, test_indices) in enumerate(cv.split(train_X)):
@@ -70,7 +83,7 @@ def make_nn_surrogate_model(
                 lrate=lrate,
                 batch_size=batch_size,
                 nepochs=nepochs,
-                loss_fn=loss,
+                loss=loss,
                 gradcheck=False,
                 freq_out=freq_out,
                 freq_plot=freq_plot,
@@ -88,7 +101,7 @@ def make_nn_surrogate_model(
             lrate=lrate,
             batch_size=batch_size,
             nepochs=nepochs,
-            loss_fn=loss,
+            loss=loss,
             gradcheck=False,
             freq_out=freq_out,
             freq_plot=freq_plot,
@@ -184,7 +197,6 @@ class MLPBase(torch.nn.Module):
         xtrn,
         ytrn,
         val=None,
-        loss_fn='mse',
         optimizer='adam',
         wd=0.0,
         lrate=0.1,
@@ -204,17 +216,8 @@ class MLPBase(torch.nn.Module):
 
         # Loss function
         if loss is None:
-            if loss_fn == 'mse':
-                # loss = torch.nn.MSELoss(reduction='mean')
-                # so we can sum by eigenvalues..
-                loss = torch.nn.MSELoss(reduction='none')
-            elif loss_fn == 'mae':
-                loss = torch.nn.L1Loss(reduction='none')
-            elif loss_fn == 'huber':
-                loss = torch.nn.HuberLoss(reduction='none')
-            else:
-                print(f'Loss function {loss_fn} is unknown. Exiting.')
-                sys.exit()
+            print(f'No loss funtion given, using MSE.')
+            loss = torch.nn.MSELoss(reduction='none')
 
         # Optimizer selection
         if opt is None:
