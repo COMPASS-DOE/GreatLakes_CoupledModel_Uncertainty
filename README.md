@@ -24,10 +24,10 @@ This study develops a surrogate-based method to assess the uncertainty within a 
 Pringle, W. J., Huang, C., Xue, P., Wang, J., Sargsyan K., Kayastha, M., Chakraborty, T. C., Yang, Z., Qian Y., Hetland, R. D. (2024). Coupled Lake-Atmosphere-Land Physics Uncertainties in a Great Lakes Regional Climate Model. Submitted to Journal of Advances in Modeling Earth Systems, [ESSOAr Preprint](http://dx.doi.org/10.22541/essoar.171052472.24971474/v1)
 
 ## Code reference
-Pringle W. J. (2024, March 11). COMPASS-DOE/GreatLakes_CoupledModel_Uncertainty (Version v0.1). [Zenodo](https://doi.org/10.5281/zenodo.10806950).
+Pringle W. J. (2024, September 30). COMPASS-DOE/GreatLakes_CoupledModel_Uncertainty (Version v0.2). [Zenodo](https://doi.org/10.5281/zenodo.10806950).
 
 ## Data reference
-Pringle W. J. (2024, March 11). Great Lakes WRF-FVCOM model ensemble outputs: Summer 2018 daily LST and T2m (Version v0.1) [Dataset]. [Zenodo](http://doi.org/10.5281/zenodo.10806629)
+Pringle W. J. (2024, September 30). Great Lakes WRF-FVCOM model ensemble outputs: Summer 2018 daily LST and T2m (Version v0.2) [Dataset]. [Zenodo](http://doi.org/10.5281/zenodo.10806628)
 
 ## Contributing modeling software
 | Model | Version | Author-Year | DOI |
