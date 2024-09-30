@@ -259,10 +259,11 @@ class MLPBase(torch.nn.Module):
         yval_ = tch(yval)
 
         # Training process
+        self.train()
         self.best_fepoch = 0
         self.best_epoch = 0
         self.best_loss = 1.0e100
-        self.best_instance = self
+        self.best_instance = copy.deepcopy(self)
         self.ntrn = ntrn  # useful to store
 
         self.history = []
@@ -298,8 +299,7 @@ class MLPBase(torch.nn.Module):
                     self.best_loss = crit
                     # Is this dangerous?
                     delattr(self, 'best_instance')
-                    self.best_instance = copy.copy(self)
-
+                    self.best_instance = copy.deepcopy(self)
                     self.best_fepoch = fepochs
                     self.best_step = len(self.history)
                     self.best_epoch = t
@@ -342,6 +342,7 @@ class MLPBase(torch.nn.Module):
                 self.plot_history()
                 break
 
+        self.best_instance.eval()
         return self.best_instance
 
     def printParams(self):
